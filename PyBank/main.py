@@ -35,10 +35,10 @@ with open(filepath, newline="") as csvfile:
     # Read through each row of data after the header
     for row in csv_reader:
 
-        # Count of months
+        # Count  months
         count_months += 1
 
-        # Net total amount of "Profit/Losses" over the entire period
+        # Profit/Losses
         current_month_profit_loss = int(row[1])
         net_profit_loss += current_month_profit_loss
 
@@ -48,31 +48,30 @@ with open(filepath, newline="") as csvfile:
 
         else:
 
-            # Compute change in profit loss 
+            
             profit_loss_change = current_month_profit_loss - previous_month_profit_loss
 
-            # Append each month to the months[]
+           
             months.append(row[0])
 
-            # Append each profit_loss_change to the profit_loss_changes[]
+        
             profit_loss_changes.append(profit_loss_change)
 
-            # Make the current_month_loss to be previous_month_profit_loss for the next loop
+          
             previous_month_profit_loss = current_month_profit_loss
 
-    #sum and average of the changes in "Profit/Losses" over the entire period
     sum_profit_loss = sum(profit_loss_changes)
     average_profit_loss = round(sum_profit_loss/(count_months - 1), 2)
 
-    # highest and lowest changes in "Profit/Losses" over the entire period
+ 
     highest_change = max(profit_loss_changes)
     lowest_change = min(profit_loss_changes)
 
-    # Locate the index value of highest and lowest changes in "Profit/Losses" over the entire period
+
     highest_month_index = profit_loss_changes.index(highest_change)
     lowest_month_index = profit_loss_changes.index(lowest_change)
 
-    # Assign best and worst month
+    
     best_month = months[highest_month_index]
     worst_month = months[lowest_month_index]
 
