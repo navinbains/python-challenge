@@ -1,3 +1,5 @@
+# Import Modules
+
 import os
 import csv
 
@@ -6,7 +8,7 @@ import csv
 filepath = os.path.join("C:\\Users\\Coding\\Documents\\GitHub\\python-challenge\\PyBank\\Resources\\budget_data.csv")
 
 
-# Define Lists
+# Define and Create Lists
 
 months = []
 profit_loss_changes = []
@@ -19,6 +21,7 @@ profit_loss_change = 0
 
 
 # Open and read csv
+
 with open(filepath, newline="") as csvfile:
 
     csv_reader = csv.reader(csvfile, delimiter=",")
@@ -26,7 +29,7 @@ with open(filepath, newline="") as csvfile:
     # Read the header row first
     csv_header = next(csvfile)
 
-    #print(f"Header: {csv_header}")
+    print(f"Header: {csv_header}")
     # This prints -->> Header: Date, Profit/Losses
              
     # Read through each row of data after the header

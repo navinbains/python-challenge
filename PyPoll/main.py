@@ -1,10 +1,13 @@
 # Import Modules
+
 import os
 import csv
-# Set path for file to use 
-csvpath = os.path.join("C:\\Users\\Coding\\Documents\\GitHub\\python-challenge\\PyPoll\\Resources\\election_data.csv")
 
-#Create list to iterate through each row and store data 
+# Retrieve Data
+
+filepath = os.path.join("C:\\Users\\Coding\\Documents\\GitHub\\python-challenge\\PyPoll\\Resources\\election_data.csv")
+
+#Define and Create Lists
 
 total_votes_cast = 0
 Stockham_votes = 0
@@ -14,7 +17,7 @@ candidate = set()
 winner = 0
 
 # Open the CSV path where the file is located
-with open(csvpath) as csvfile :
+with open(filepath) as csvfile :
     csvreader = csv.reader(csvfile, delimiter=",")
 
      #Reading the header row to skip to the next line
